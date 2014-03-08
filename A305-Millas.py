@@ -1,11 +1,8 @@
-# A305: English entropies
-
-# load A305h: defines entropy, marginal distributions, joint entropy, ... 
 
 import sys
 sys.path.append("C:/Users/nuXe/Documents/GitHub/CDI")
 
-from A305h import *
+from A305h_Millas import *
 from A305_EN1 import *
 from A305_EN2 import *
 
