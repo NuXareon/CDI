@@ -1,6 +1,8 @@
 
 import sys
 sys.path.append("C:/Users/nuXe/Documents/GitHub/CDI")
+sys.path.append("/home/nuxe/pyzo2013c/CDI")
+
 
 from A305h_Millas import *
 from A305_EN1 import *

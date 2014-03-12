@@ -1,7 +1,6 @@
 # A309h : header file for A306 
 
 from math import log
-import string
 
 def log2(x): return log(x)/log(2)
 
@@ -31,17 +30,3 @@ def unfold(P):
     return X
 
 def joint_entropy(P): return entropy(unfold(P))
-
-def joint_distribution(U,CPM):
-    P = []
-    n = sum(U.values())
-    char_list = list(string.ascii_lowercase)
-    char_list.append('_')
-    for j in char_list: 
-        c = U[j]
-        if j == '_' : i = len(p)-1;
-        else: i = ord(j)-ord('a')
-        p = CPM[i]
-        p = [(c/n) * p[k] for k in range(len(p))]
-        P.append(p)
-    return P

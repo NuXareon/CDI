@@ -16,7 +16,7 @@ def vline(a,b,d,lw=1, dash='k-'):
 plt.close()
 plt.close()
 
-x = np.arange(0.0,1.0,0.0001)
+x = np.arange(0.0001,1.0,0.001)
 
 fig = plt.figure(figsize=(10,6))
 
@@ -33,8 +33,10 @@ p = 1/e
 vline(0,-p*log2(p),p,dash='k--')
 hline(0,0.5,-p*log2(p),dash='k--')
 
-plt.annotate('$-p*\log_2(p)$',xy=(0.8,0.4), xytext=(0.8,0.4), fontsize=16)
-plt.annotate('$\log_2(e)/e$ =~ $0.53$',xy=(0.4,0.2), xytext=(0.4,0.2), fontsize=16)
+plt.plot([p],[0],'ko')
+
+plt.annotate('$-p\, \log_2(p)$',xy=(0.8,0.4), xytext=(0.8,0.4), fontsize=16)
+plt.annotate('$\log_2(e)/e \simeq 0.53$',xy=(0.4,0.2), xytext=(0.4,0.2), fontsize=16)
 plt.annotate('$1/e$',xy=(p,0), xytext=(0.34,-0.05), fontsize=16)
 
 plt.show()
@@ -49,9 +51,15 @@ plt.plot(x ,-x*log2(x)-(1-x)*log2(1-x), lw=3, color='black')
 hline(0,1.05,0)
 vline(0,1.05,0)
 
+
 p = 0.5
 
 hline(0,p,-p*log2(p)-(1-p)*log2(1-p))
 vline(0,-p*log2(p)-(1-p)*log2(1-p),p,dash='k--')
+
+plt.plot([p],[0],'ko')
+
+plt.annotate('$-p\, \log_2(p)\, -\, (1-p)\, \log_2(1-p)$',xy=(0.65,0.95), xytext=(0.65,0.95), fontsize=16)
+plt.annotate('$0.5$',xy=(0.4,-0.05), xytext=(0.47,-0.05), fontsize=16)
 
 plt.show()
