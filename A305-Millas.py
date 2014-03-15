@@ -23,6 +23,7 @@ HAB = joint_entropy(D)
 
 print("P(A,D) = ",D[0][3])
 print("P(F,H) = ", D[5][7])
+print("P(_,_) = ", D[26][26])
 print("Row Marginal Probability for A = ", A[0])
 print("Row Marginal Probability for Z = ", A[25])
 print("Column Marginal Probability for A = ", B[0])
