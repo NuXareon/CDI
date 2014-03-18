@@ -1,9 +1,9 @@
 # A312x: kick off file for A312
 
 #pypath="d:/Docencia/2014/py/"
-#pypath="/home/nuxe/pyzo2013c/CDI"
+pypath="/home/nuxe/pyzo2013c/CDI"
 #pypath="C:/Users/nuXe/Documents/GitHub/CDI"
-pypath="C:/Users/NuXe/Desktop/UPC/cdi/CDI"
+#pypath="C:/Users/NuXe/Desktop/UPC/cdi/CDI"
 
 # Add pypath to path
 import sys
