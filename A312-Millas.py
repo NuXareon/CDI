@@ -1,8 +1,9 @@
 # A312x: kick off file for A312
 
-pypath="d:/Docencia/2014/py/"
+#pypath="d:/Docencia/2014/py/"
 #pypath="/home/nuxe/pyzo2013c/CDI"
 #pypath="C:/Users/nuXe/Documents/GitHub/CDI"
+pypath="C:/Users/NuXe/Desktop/UPC/cdi/CDI"
 
 # Add pypath to path
 import sys
@@ -37,15 +38,17 @@ print(round(ell,3))
 sigma2 = sum([P[j] * (L[j]-ell)**2 for j in R])
 print(round(sigma2,3))
 
-ell_2 = sum(ME_[x][0]*ME_[x][1] for x in AZ)
-sigma2_2 = sum(ME_[x][0]*(ME_[x][1]-ell_2)**2 for x in AZ)
+AZ_ = AZ
+AZ_.append('_')
+
+ell_2 = sum(ME_[x][0]*ME_[x][1] for x in AZ_)
+sigma2_2 = sum(ME_[x][0]*(ME_[x][1]-ell_2)**2 for x in AZ_)
 
 e1_=entropy(EN_.values())
 
 print("Mean lenght l =",ell_2)
-print("Entropy of EN_ =",e1_)
-print("By coding each letter of the english alphabet with a diferent number of bits depending of their probability we have reduced the entropy, that means that we need a lower amount of bits to codify an english text thanks to the new codifycation.")
+print("Entropy of EN_ =",round(e1_,4))
 print("Comparing morse and the new encoding:")
-print("Mean lenght: morse = ", ell, ", codification = ", ell_2)
-print("Variance: morse = ",sigma2, ", codification = ",sigma2_2)
+print("Mean lenght: morse = ", round(ell,4), ", codification = ", round(ell_2,4))
+print("Variance: morse = ",round(sigma2,4), ", codification = ",round(sigma2_2,4))
 print("We can see from this values that the morse code uses less bits to codify an english text. However, we have to take into acount that the morse code is more time consuming since it uses \"silences\" to represent the end of a character or the space")
