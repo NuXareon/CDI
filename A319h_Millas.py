@@ -10,8 +10,9 @@ def kraft(L, r=2):
     return kraft_sum(L,r)<=1
     
 def K(L, l, r=2):
+    n = len(L)
     while kraft(L,r): L += [l]
-    return len(L)-1-3
+    return len(L)-1-n
     
 def M(L, r=2):
     l = 1
