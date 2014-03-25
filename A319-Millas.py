@@ -1,7 +1,8 @@
 # A319x
 
 #pypath = 'D:/Docencia/2014/py'
-pypath = 'C:/Users/NuXe/Desktop/UPC/cdi/CDI'
+pypath = '/home/nuxe/pyzo2013c/CDI'
+#pypath = 'C:/Users/NuXe/Desktop/UPC/cdi/CDI'
 import sys
 sys.path.append(pypath)
 
