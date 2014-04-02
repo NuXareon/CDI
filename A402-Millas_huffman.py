@@ -318,6 +318,47 @@ exampleData2= [
     (0.1918182, ' ')
 ]
 
+Data= [ 
+    (0.0575, 'a'),
+    (0.0128, 'b'),
+    (0.0263, 'c'),
+    (0.0285, 'd'),
+    (0.0913, 'e'),
+    (0.0173, 'f'),
+    (0.0133, 'g'),
+    (0.0313, 'h'),
+    (0.0599, 'i'),
+    (0.0006, 'j'),
+    (0.0084, 'k'),
+    (0.0335, 'l'),
+    (0.0235, 'm'),
+    (0.0596, 'n'),
+    (0.0689, 'o'),
+    (0.0192, 'p'),
+    (0.0008, 'q'),
+    (0.0508, 'r'),
+    (0.0567, 's'),
+    (0.0706, 't'),
+    (0.0334, 'u'),
+    (0.0069, 'v'),
+    (0.0119, 'w'),
+    (0.0076, 'x'),
+    (0.0164, 'y'),
+    (0.0007, 'z'),
+    (0.1928, ' ')
+]
+
+huffmanTree = makeHuffTree(Data)
+printHuffTree(huffmanTree)
+codeDict = dict()
+huffCode(huffmanTree,codeDict)
+message = 'the quick brown fox jumps over the lazy dog'
+print('Message: ', message)
+messageEncoding = huffCoding(message,codeDict)
+print('Endoded: ', messageEncoding)
+print('Decoded: ', huffDecoding(messageEncoding,codeDict))
+
+
 # if __name__ == '__main__':
 #     
 #     
