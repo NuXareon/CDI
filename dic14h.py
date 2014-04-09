@@ -28,3 +28,12 @@ def sample(h, N, a=0, b=1):
 # returns [f[1],f[3],...]
 def decimate(f): 
     return [f[j] for j in range(1,len(f),2)]
+
+# To round a float to n decimal places. It also works
+# for a list or a matrix of floats.
+def round(f,n):
+    if isinstance(f,int): return float(f)
+    if isinstance(f,float): return float("%.*f" % (n,f))
+    if (not hasattr(f, "strip") and hasattr(f, "__getitem__") or hasattr(f, "__iter__")):
+        return [round(x,n) for x in f]
+    
