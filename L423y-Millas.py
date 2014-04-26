@@ -30,7 +30,7 @@ G=[
 [dot(v1,v1),dot(v1,v2)],
 [dot(v2,v1),dot(v2,v2)]
 ]
-G=matrix(G)
+G=np.matrix(G)
 H = G.I
 
 t=w*H
@@ -41,3 +41,4 @@ x1 = t1*v1 + t2*v2 # projeccio del vector sobre el pla
 print(x1)
 print(dot(x-x1,v1)) # ha de ser 0
 print(dot(x-x1,v2)) # ha de ser 0
+
