@@ -31,8 +31,12 @@ def WThaarcol(X): return transpose(WThaarrow(transpose(X)))
 def WTdaub4(X): return WTdaub4col(WTdaub4row(X))
 
 def WTdaub4row(X):
-    #...
-    return X #array(Y)
+    r, c = X, shape
+    X = list(X)
+    Y = []
+    for x in X:
+        Y += [D4(x)]
+    return array(Y)
 #
 def WTdaub4col(X): return transpose(WTdaub4row(transpose(X)))   
 
@@ -40,8 +44,12 @@ def WTdaub4col(X): return transpose(WTdaub4row(transpose(X)))
 def WTdaub6(X): return WTdaub6col(WTdaub6row(X))
 
 def WTdaub6row(X):
-    #...
-    return X #array(Y)
+    r, c = X, shape
+    X = list(X)
+    Y = []
+    for x in X:
+        Y += [D6(x)]
+    return array(Y)
 #
 def WTdaub6col(X): return transpose(WTdaub6row(transpose(X))) 
    
@@ -49,6 +57,8 @@ def WTdaub6col(X): return transpose(WTdaub6row(transpose(X)))
 ''' A521.2
     i_WT of images/matrices
 '''
+
+def i_WT(X): return i_haar(WT(X))
    
    
 ''' A521.3
@@ -100,14 +110,44 @@ plt.gray()
 plt.axis('off')
 imshow(Yrow, interpolation='nearest')
 
+Yrow = WTdaub4row(X)
+plt.figure('WThaarrow of '+str(m)+'x'+str(n)+' gray image daub4')
+plt.gray()
+plt.axis('off')
+imshow(Yrow, interpolation='nearest')
+
+Yrow = WTdaub6row(X)
+plt.figure('WThaarrow of '+str(m)+'x'+str(n)+' gray image daub6')
+plt.gray()
+plt.axis('off')
+imshow(Yrow, interpolation='nearest')
+
 Ycol = WThaarcol(X)
 plt.figure('WThaarcol of '+str(m)+'x'+str(n)+' gray image')
 plt.gray()
 plt.axis('off')
 imshow(Ycol, interpolation='nearest')
 
+Ycol = WTdaub4col(X)
+plt.figure('WThaarcol of '+str(m)+'x'+str(n)+' gray image daub4')
+plt.gray()
+plt.axis('off')
+imshow(Ycol, interpolation='nearest')
+
+Ycol = WTdaub6col(X)
+plt.figure('WThaarcol of '+str(m)+'x'+str(n)+' gray image daub6')
+plt.gray()
+plt.axis('off')
+imshow(Ycol, interpolation='nearest')
+
 Y = WT(X)
 plt.figure('WT of '+str(m)+'x'+str(n)+' gray image')
+plt.gray()
+plt.axis('off')
+imshow(Y, interpolation='nearest')
+
+Y = WT(X,'duab4')
+plt.figure('WT of '+str(m)+'x'+str(n)+' gray image daub4')
 plt.gray()
 plt.axis('off')
 imshow(Y, interpolation='nearest')
